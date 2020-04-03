@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+    postgresql:
+        image: postgres
+        container_name: postgres-stubb
+        restart: always
+        ports:
+            - "5432:5432"       
+        environment:         
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=teste
+            - POSTGRES_HOST_AUTH_METHOD=trust
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
+# version: '3.1'
+# services:
+#   db:
+#     image: "postgres:11"
+#     container_name: "postgres"
+#     restart: always
+#     environment:
+#       POSTGRES_PASSWORD: postgres
+#       POSTGRES_USER: postgres
+#       POSTGRES_DB: postgres
+#       POSTGRES_HOST_AUTH_METHOD: trust
+#     ports:
+#       - "5432:5432"
+#   adminer:
+#     image: adminer
+#     restart: always
+#     ports:
+#       - 8080:8080
